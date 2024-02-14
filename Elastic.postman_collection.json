@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "9bb2906a-97a3-40d8-bb36-4b229b590595",
+		"name": "Elastic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create address",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Dhiraj@124",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "surved",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"street\": \"123 Main Street\",\n    \"city\": \"London\",\n    \"postalCode\": \"SW1A 1AA\",\n    \"country\": \"United Kingdom\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma.aos.us-east-2.on.aws/address/_doc/2",
+					"protocol": "https",
+					"host": [
+						"search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma",
+						"aos",
+						"us-east-2",
+						"on",
+						"aws"
+					],
+					"path": [
+						"address",
+						"_doc",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create address Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Dhiraj@124",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "surved",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/Users/dhirajsurve/Documents/address.json"
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma.aos.us-east-2.on.aws/address/_bulk",
+					"protocol": "https",
+					"host": [
+						"search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma",
+						"aos",
+						"us-east-2",
+						"on",
+						"aws"
+					],
+					"path": [
+						"address",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Dhiraj@124",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "surved",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma.aos.us-east-2.on.aws/address/_search?q=lond&pretty=true",
+					"protocol": "https",
+					"host": [
+						"search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma",
+						"aos",
+						"us-east-2",
+						"on",
+						"aws"
+					],
+					"path": [
+						"address",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "lond"
+						},
+						{
+							"key": "pretty",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Dhiraj@124",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "surved",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"prefix\": {\n            \"street.keyword\": {\n                \"value\": \"123\",\n                \"case_insensitive\": true\n            }\n            \n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma.aos.us-east-2.on.aws/address/_search",
+					"protocol": "https",
+					"host": [
+						"search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma",
+						"aos",
+						"us-east-2",
+						"on",
+						"aws"
+					],
+					"path": [
+						"address",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Multi Field Search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Dhiraj@124",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "surved",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"should\": [\n                {\n                    \"wildcard\": {\n                        \"street.keyword\": {\n                            \"value\": \"*str*\",\n                            \"case_insensitive\": true\n                        }\n                    }\n                },\n                {\n                    \"wildcard\": {\n                        \"postalcode.keyword\": {\n                            \"value\": \"*W1*\",\n                            \"case_insensitive\": true\n                        }\n                    }\n                }\n            ],\n            \"minimum_should_match\": 1\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma.aos.us-east-2.on.aws/address/_search",
+					"protocol": "https",
+					"host": [
+						"search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma",
+						"aos",
+						"us-east-2",
+						"on",
+						"aws"
+					],
+					"path": [
+						"address",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Multi Field Search Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Dhiraj@124",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "surved",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"should\": [\n                {\n                    \"wildcard\": {\n                        \"customer_full_name.keyword\": {\n                            \"value\": \"*ker*\",\n                            \"case_insensitive\": true\n                        }\n                    }\n                },\n                {\n                    \"wildcard\": {\n                        \"email.keyword\": {\n                            \"value\": \"*ker*\",\n                            \"case_insensitive\": true\n                        }\n                    }\n                }\n            ],\n            \"minimum_should_match\": 1\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma.aos.us-east-2.on.aws/opensearch_dashboards_sample_data_ecommerce/_search",
+					"protocol": "https",
+					"host": [
+						"search-addresscluster-ivgztabx4s3g6lg2ox4kklh6ma",
+						"aos",
+						"us-east-2",
+						"on",
+						"aws"
+					],
+					"path": [
+						"opensearch_dashboards_sample_data_ecommerce",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
